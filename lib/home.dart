@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   double? imageWidth;
   List? recognitionsList;
   initCamera() {
-    cameraController = CameraController(cameras![0], ResolutionPreset.medium);
+    cameraController = CameraController(cameras[0], ResolutionPreset.medium);
     cameraController.initialize().then((value) {
       if (!mounted) {
         return;
@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
         bytesList: cameraImage.planes.map((e) {
           return e.bytes;
         }).toList(),
-        model: 'YOLO',
+        model: 'yolov8',
         imageHeight: cameraImage.height,
         imageWidth: cameraImage.width,
         imageMean: 127.5,
